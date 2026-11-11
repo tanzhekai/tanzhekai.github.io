@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tan Zhe Kai | Computer Science, NTU</title>
+  <meta name="description" content="Tan Zhe Kai: computer science at NTU (AI specialisation). Data pipelines, dashboards and AI assistants. Experience at Seagate, Rolls-Royce and Coca-Cola. Download my resume.">
+  <meta property="og:title" content="Tan Zhe Kai | Computer Science, NTU">
+  <meta property="og:description" content="Data pipelines, dashboards and AI assistants. Experience at Seagate, Rolls-Royce and Coca-Cola.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tanzhekai.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232B3FA8'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23F4F4EF'%3EZK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F4F4EF;
+      --sheet: #FFFFFF;
+      --ink: #1C1F26;
+      --graphite: #5E626B;
+      --rule: #DCDBD3;
+      --royal: #2B3FA8;
+      --royal-deep: #1F2F86;
+      --greek: #DADDE4;
+      --greek-strong: #B7BCC8;
+
+      --serif: "Literata", "Iowan Old Style", Georgia, serif;
+      --sans: "Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+      --page: 1120px;
+      --gutter: clamp(20px, 4vw, 40px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 17px/1.6 var(--sans);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--royal); color: var(--paper); }
+
+    a { color: var(--royal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--royal-deep); text-decoration-thickness: 2px; }
+    a:focus-visible, .button:focus-visible, .sheet:focus-visible {
+      outline: 2px solid var(--royal);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    .wrap { max-width: var(--page); margin: 0 auto; padding: 0 var(--gutter); }
+
+    .skip {
+      position: absolute; left: -9999px; top: 8px;
+      background: var(--ink); color: var(--paper); padding: 8px 14px; z-index: 20;
+    }
+    .skip:focus { left: 8px; }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(244, 244, 239, 0.94);
+      backdrop-filter: saturate(140%) blur(6px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s;
+    }
+    .site-header.scrolled { border-bottom-color: var(--rule); }
+    .site-header .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; gap: 24px;
+    }
+    .brand {
+      font-family: var(--serif); font-weight: 500; font-size: 18px;
+      color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+    }
+    .brand:hover { color: var(--ink); }
+    .nav { display: flex; align-items: center; gap: 26px; font-size: 15px; }
+    .nav a { color: var(--graphite); text-decoration: none; }
+    .nav a:hover { color: var(--ink); }
+    .nav .button { color: var(--paper); }
+
+    .button {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--royal); color: var(--paper);
+      font: 500 15px/1 var(--sans);
+      padding: 11px 16px; border-radius: 6px;
+      text-decoration: none; border: 1px solid var(--royal);
+    }
+    .button:hover { background: var(--royal-deep); border-color: var(--royal-deep); color: var(--paper); }
+    .button svg { width: 15px; height: 15px; flex: none; }
+    .nav .button { padding: 8px 13px; font-size: 14px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 48px 72px;
+      align-items: center;
+      padding: clamp(48px, 9vw, 112px) 0 clamp(64px, 9vw, 112px);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-size: clamp(3.25rem, 8.4vw, 6.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0 0 32px;
+    }
+    .lede {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.1vw, 1.45rem);
+      line-height: 1.55;
+      max-width: 34em;
+      margin: 0 0 16px;
+    }
+    .lede-sub { color: var(--graphite); margin: 0 0 36px; max-width: 38em; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; }
+    .actions a:not(.button) { font-weight: 500; }
+
+    /* The resume sheet: the page's one bold object, and a download link */
+    .sheet-figure { margin: 0; justify-self: end; width: 100%; max-width: 300px; }
+    .sheet {
+      display: block; position: relative;
+      aspect-ratio: 8.5 / 11;
+      background: var(--sheet);
+      border-radius: 2px;
+      padding: 9% 9% 0;
+      box-shadow:
+        0 1px 0 rgba(28, 31, 38, .04),
+        0 2px 6px rgba(28, 31, 38, .06),
+        0 18px 40px -12px rgba(28, 31, 38, .22);
+      text-decoration: none; color: var(--ink);
+      transition: transform .25s ease, box-shadow .25s ease;
+      overflow: hidden;
+    }
+    .sheet:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 1px 0 rgba(28, 31, 38, .04),
+        0 4px 10px rgba(28, 31, 38, .07),
+        0 28px 50px -14px rgba(28, 31, 38, .28);
+    }
+    .sheet { container-type: inline-size; }
+    .sheet-tab {
+      position: absolute; right: 0; top: 0;
+      background: var(--royal); color: var(--paper);
+      font: 600 max(9px, 3.6cqw)/1 var(--sans); letter-spacing: .04em;
+      padding: 2.3cqw 3cqw 2.3cqw 3.3cqw; border-bottom-left-radius: 2cqw;
+    }
+    .s-name {
+      font-family: var(--serif); font-variant: small-caps; font-weight: 600;
+      font-size: 5cqw; line-height: 1.2; text-align: center; letter-spacing: .02em; margin-bottom: 2cqw;
+    }
+    .s-contact { display: flex; justify-content: center; gap: 2cqw; margin-bottom: 4.6cqw; }
+    .s-contact i { display: block; height: 1cqw; width: 11.3cqw; background: var(--greek); border-radius: 1cqw; }
+    .s-sec {
+      font-family: var(--serif); font-variant: small-caps; font-size: 3cqw; line-height: 1.2; font-weight: 500;
+      border-bottom: 1px solid var(--ink); padding-bottom: .3cqw; margin: 3.8cqw 0 2.1cqw;
+      letter-spacing: .03em;
+    }
+    .s-row { display: flex; justify-content: space-between; margin: 2.2cqw 0 1.2cqw; }
+    .s-row i { display: block; height: 1cqw; background: var(--greek-strong); border-radius: 1cqw; }
+    .s-row i:last-child:not(:first-child) { background: var(--greek); }
+    .s-line { display: block; height: .85cqw; background: var(--greek); border-radius: 1cqw; margin: 1.55cqw 0 0 2.3cqw; }
+    .s-flush { margin-left: 0; }
+    .sheet-caption { margin-top: 18px; font-size: 14px; color: var(--graphite); line-height: 1.45; }
+    .sheet-caption strong { color: var(--ink); font-weight: 600; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .sheet-figure { animation: settle .8s cubic-bezier(.2, .7, .2, 1) .15s both; }
+      @keyframes settle {
+        from { opacity: 0; transform: translateY(22px) rotate(1.2deg); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .sheet, .site-header { transition: none; }
+    }
+
+    /* ---------- Sections ---------- */
+    .section {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 0 40px;
+      padding: 72px 0;
+      border-top: 1px solid var(--rule);
+    }
+    .section-title {
+      position: sticky; top: 92px; align-self: start;
+      font-family: var(--serif); font-weight: 500;
+      font-size: 28px; line-height: 1.2; letter-spacing: -0.015em;
+      margin: 0;
+    }
+    .entry {
+      display: grid;
+      grid-template-columns: 136px minmax(0, 1fr);
+      gap: 0 32px;
+    }
+    .entry + .entry { margin-top: 52px; }
+    .meta { margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: var(--graphite); }
+    .meta span { display: block; }
+    .main { max-width: 42em; }
+    .main h3 {
+      font-family: var(--serif); font-weight: 500;
+      font-size: 24px; line-height: 1.25; letter-spacing: -0.01em;
+      margin: 0;
+    }
+    .role { margin: 4px 0 0; color: var(--graphite); }
+    .summary { margin: 10px 0 0; }
+    .main ul { margin: 14px 0 0; padding-left: 1.1em; }
+    .main li { margin: 0 0 8px; padding-left: 4px; }
+    .main li::marker { color: var(--greek-strong); }
+    .stack { margin: 14px 0 0; font-size: 15px; color: var(--graphite); }
+    .stack b { font-weight: 500; color: var(--ink); }
+    .award { margin: 10px 0 0; font-weight: 500; }
+    .code-link { display: inline-block; margin-top: 12px; font-weight: 500; }
+
+    .skills .entry + .entry { margin-top: 22px; }
+    .skills .meta { margin-top: 1px; color: var(--ink); font-weight: 500; font-size: 15px; }
+    .skills .main p { margin: 0; color: var(--graphite); }
+
+    .contact-lede { margin: 0 0 14px; color: var(--graphite); }
+    .contact-email {
+      font-family: var(--serif); font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+      letter-spacing: -0.015em; text-decoration-thickness: 1px;
+      overflow-wrap: anywhere;
+    }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 26px 0 0; padding: 0; list-style: none; }
+    .contact-links a { font-weight: 500; }
+
+    .site-footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; font-size: 14px; color: var(--graphite); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1000px) {
+      .section { grid-template-columns: 1fr; padding: 60px 0; }
+      .section-title { position: static; margin-bottom: 32px; }
+    }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; gap: 44px; }
+      .sheet-figure {
+        justify-self: stretch; max-width: none;
+        display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: center;
+      }
+      .sheet-caption { margin: 0; }
+      .nav a:not(.button) { display: none; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .actions .button { width: 100%; justify-content: center; padding: 14px 16px; }
+      .entry { grid-template-columns: 1fr; }
+      .meta { margin: 0 0 6px; }
+      .meta span { display: inline; }
+      .meta span + span::before { content: ", "; }
+      .entry + .entry { margin-top: 44px; }
+      .skills .meta { margin-bottom: 2px; }
+      .main h3 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap">
+      <a class="brand" href="#top">Tan Zhe Kai</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#stack">Tech stack</a>
+        <a href="#contact">Contact</a>
+        <a class="button" href="Resume_TanZheKai.pdf" download="Resume_TanZheKai.pdf">Resume (PDF)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+
+    <section class="hero" aria-label="Introduction">
+      <div>
+        <h1>Tan Zhe Kai</h1>
+        <p class="lede">I study computer science at NTU, specialising in artificial intelligence, and graduate in December 2026. I build data pipelines, dashboards and AI assistants that take repetitive work off people’s desks, most recently for equipment engineers at Seagate.</p>
+        <p class="lede-sub">Looking for graduate roles in software, data and AI.</p>
+        <div class="actions">
+          <a class="button" href="Resume_TanZheKai.pdf" download="Resume_TanZheKai.pdf">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8.5M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg>
+            Download resume
+          </a>
+          <a href="mailto:tan.zhekai@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/zhekai/" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/tanzhekai" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <figure class="sheet-figure">
+        <a class="sheet" href="Resume_TanZheKai.pdf" download="Resume_TanZheKai.pdf" aria-label="Download my resume, PDF, one page">
+          <span class="sheet-tab" aria-hidden="true">PDF</span>
+          <div aria-hidden="true">
+            <div class="s-name">Tan Zhe Kai</div>
+            <div class="s-contact"><i></i><i></i><i></i></div>
+
+            <div class="s-sec">Education</div>
+            <div class="s-row"><i style="width:52%"></i><i style="width:24%"></i></div>
+            <span class="s-line" style="width:46%"></span>
+            <div class="s-row"><i style="width:38%"></i><i style="width:22%"></i></div>
+            <span class="s-line" style="width:58%"></span>
+
+            <div class="s-sec">Experience</div>
+            <div class="s-row"><i style="width:56%"></i><i style="width:22%"></i></div>
+            <span class="s-line" style="width:93%"></span>
+            <span class="s-line" style="width:88%"></span>
+            <span class="s-line" style="width:95%"></span>
+            <span class="s-line" style="width:90%"></span>
+            <span class="s-line" style="width:74%"></span>
+            <div class="s-row"><i style="width:50%"></i><i style="width:22%"></i></div>
+            <span class="s-line" style="width:91%"></span>
+            <span class="s-line" style="width:85%"></span>
+            <span class="s-line" style="width:80%"></span>
+            <div class="s-row"><i style="width:40%"></i><i style="width:22%"></i></div>
+            <span class="s-line" style="width:88%"></span>
+            <span class="s-line" style="width:83%"></span>
+
+            <div class="s-sec">Projects</div>
+            <div class="s-row"><i style="width:74%"></i></div>
+            <span class="s-line" style="width:92%"></span>
+            <span class="s-line" style="width:89%"></span>
+            <span class="s-line" style="width:94%"></span>
+            <span class="s-line" style="width:70%"></span>
+            <div class="s-row"><i style="width:64%"></i></div>
+            <span class="s-line" style="width:90%"></span>
+            <span class="s-line" style="width:78%"></span>
+
+            <div class="s-sec">Skills</div>
+            <span class="s-line s-flush" style="width:92%"></span>
+            <span class="s-line s-flush" style="width:88%"></span>
+            <span class="s-line s-flush" style="width:95%"></span>
+            <span class="s-line s-flush" style="width:84%"></span>
+            <span class="s-line s-flush" style="width:90%"></span>
+            <span class="s-line s-flush" style="width:52%"></span>
+          </div>
+        </a>
+        <figcaption class="sheet-caption"><strong>Resume</strong>, one page, PDF.<br>Updated October 2026.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <div>
+
+        <article class="entry">
+          <p class="meta"><span>Jun&nbsp;–&nbsp;Dec&nbsp;2026</span></p>
+          <div class="main">
+            <h3>Seagate Technology</h3>
+            <p class="role">Data Analytics &amp; Automation Intern</p>
+            <ul>
+              <li>Automated daily extraction of equipment telemetry from live production servers with scheduled Python jobs, cleaning about 1M records a day into DuckDB and Parquet and cutting data-prep time by about 85%.</li>
+              <li>Built a Streamlit analytics dashboard on that pipeline, hosted on-premise, giving 20+ equipment engineers same-day performance visibility in place of manual Excel pulls.</li>
+              <li>Wrote modular tools for yield analysis, component changeout monitoring, low-yield unit detection and multi-file Excel consolidation, cutting anomaly detection time from days to under an hour.</li>
+              <li>Prototyping an agentic RAG assistant over the same data: an n8n-orchestrated reason–act–observe loop with schema-aware SQL tool calls on DuckDB, vector search over engineering SOPs and scoped tool permissions.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <p class="meta"><span>Jul&nbsp;–&nbsp;Dec&nbsp;2025</span></p>
+          <div class="main">
+            <h3>Rolls-Royce Solutions Asia</h3>
+            <p class="role">Order Management Intern</p>
+            <ul>
+              <li>Automated SAP order-data processing with Excel VBA, cutting manual handling time by about 60% and removing recurring transcription errors from monthly reporting.</li>
+              <li>Supported SAP S/4HANA user acceptance testing: documented 30+ test cases, validated end-to-end order workflows and resolved defects in SAP Cloud ALM.</li>
+              <li>Reconciled customer order data across SAP and several Excel sources, improving monthly delivery-planning accuracy and reducing rework.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <p class="meta"><span>Sep&nbsp;2020 – May&nbsp;2021</span></p>
+          <div class="main">
+            <h3>The Coca-Cola Company</h3>
+            <p class="role">IT Intern</p>
+            <ul>
+              <li>Developed Microsoft PowerApps applications for engineers that replaced paper-based processes, including a COVID-19 attendance tracker with temperature screening, built with the HR team.</li>
+              <li>Performed periodic data migrations with zero downtime and kept the device and asset inventory 100% accurate.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Projects</h2>
+      <div>
+
+        <article class="entry">
+          <p class="meta"><span>Final-year project</span><span>2026</span></p>
+          <div class="main">
+            <h3>SlideScribe</h3>
+            <p class="role">AI-enhanced speech-to-text presentation assistant</p>
+            <p class="summary">Transcribes a presenter’s speech in real time, corrects the grammar with an LLM, and writes the result into the deck’s speaker notes.</p>
+            <ul>
+              <li>Streams microphone audio over WebRTC, cutting chunks at natural pauses and skipping silence, which removed hallucinated filler text and about 30% of redundant API calls.</li>
+              <li>Provider-agnostic LLM connector (Groq, OpenAI, Gemini) with ranked model fallback and retries on transient errors; it kept the app running through three upstream model retirements.</li>
+              <li>Grammar fixes come back as positional edit markup, so each correction can be accepted or rejected in a before/after view before python-pptx writes the notes into the .pptx.</li>
+              <li>Deployed on Azure Container Apps from a Bicep template, with Microsoft, Google and GitHub sign-in and per-user storage on Azure Files.</li>
+            </ul>
+            <p class="stack"><b>Built with</b> Python, Streamlit, WebRTC, Whisper, Groq, OpenAI and Gemini APIs, python-pptx, Azure Container Apps, Bicep</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <p class="meta"><span>Self-directed lab</span><span>Oct&nbsp;2026</span></p>
+          <div class="main">
+            <h3>CDN Troubleshooting Lab</h3>
+            <p class="summary">Put a domain behind Cloudflare’s reverse proxy in front of my own Nginx origin, then broke it on purpose to practise diagnosis.</p>
+            <ul>
+              <li>Reproduced, diagnosed and fixed 521, 522, 524, 525, 526 and redirect-loop errors using curl, dig, tcpdump and openssl.</li>
+              <li>Wrote each case up as a knowledge-base article: symptom, root cause, evidence and fix.</li>
+            </ul>
+            <p class="stack"><b>Built with</b> Cloudflare, Nginx, Linux, curl, dig, tcpdump, openssl</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <p class="meta"><span>Team project</span></p>
+          <div class="main">
+            <h3>Autonomous Mobile Robot</h3>
+            <p class="role">Integrated image recognition</p>
+            <p class="summary">A team-built robot that finds the shortest path through an obstacle course on its own and recognises the icon on each obstacle. I worked on the Raspberry Pi control module.</p>
+            <ul>
+              <li>Set up low-latency Bluetooth and Wi-Fi links between the Raspberry Pi and the STM32 microcontroller, giving reliable real-time control with sub-second response.</li>
+              <li>Worked with the Android and algorithm teams to integrate computer-vision icon recognition (90% accuracy) and shortest-path navigation for the autonomous run.</li>
+            </ul>
+            <p class="stack"><b>Built with</b> Raspberry Pi, STM32, Python, Android Studio</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <p class="meta"><span>Concept proposal</span></p>
+          <div class="main">
+            <h3>AI-Powered Monkey Detection System</h3>
+            <p class="role">Reducing roadkill incidents of monkeys</p>
+            <p class="summary">Proposed an AI-powered infrared detection system that identifies monkeys near roads in real time, to support proactive measures that reduce roadkill.</p>
+            <p class="award">Awarded “Most Promising”.</p>
+            <p class="stack"><b>Approach</b> Computer vision, infrared imaging</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <p class="meta"><span>Team project</span><span>Aug&nbsp;–&nbsp;Dec&nbsp;2024</span></p>
+          <div class="main">
+            <h3>PowerSaver</h3>
+            <p class="role">Electricity cost estimation for households</p>
+            <p class="summary">An Android app that estimates a household’s electricity bill from the usage it enters, using local tariff data.</p>
+            <ul>
+              <li>Integrated locally accessible tariff APIs, reaching about 90% accuracy in cost estimates across test cases.</li>
+              <li>Added analytics that compare a household’s consumption with the national average.</li>
+              <li>Systematic testing and debugging cut crash rates by about 40% before release.</li>
+            </ul>
+            <p class="stack"><b>Built with</b> Java, Android Studio, REST APIs</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <p class="meta"><span>Data science coursework</span><span>Feb&nbsp;–&nbsp;Apr&nbsp;2024</span></p>
+          <div class="main">
+            <h3>Flight Delay Prediction</h3>
+            <p class="summary">Predicts whether a US flight will be delayed, and which factors matter most, from 2019 airline, weather and airport data.</p>
+            <ul>
+              <li>Led data cleaning and merging, then built and tuned the models: decision tree, random forest, AdaBoost, XGBoost and naive Bayes, with GridSearchCV and k-fold cross-validation.</li>
+              <li>Used feature importance to find the strongest drivers of delay (aircraft age came out on top) and turned them into recommendations for travellers, airlines and airports.</li>
+            </ul>
+            <p class="stack"><b>Built with</b> Python, pandas, scikit-learn, XGBoost, Jupyter</p>
+            <a class="code-link" href="https://github.com/tanzhekai/SC1015" rel="noopener">View the code on GitHub</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
+      <div>
+        <article class="entry">
+          <p class="meta"><span>Aug&nbsp;2023 – Dec&nbsp;2026</span><span>Expected</span></p>
+          <div class="main">
+            <h3>Nanyang Technological University, Singapore</h3>
+            <p class="role">Bachelor of Computing (Hons) in Computer Science</p>
+            <p class="summary">Specialising in artificial intelligence.</p>
+          </div>
+        </article>
+        <article class="entry">
+          <p class="meta"><span>Apr&nbsp;2018 – May&nbsp;2021</span></p>
+          <div class="main">
+            <h3>Ngee Ann Polytechnic, Singapore</h3>
+            <p class="role">Diploma in Financial Informatics</p>
+            <p class="summary">Specialised in financial analytics. Director’s List for three semesters.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== TECH STACK ===================== -->
+    <section class="section skills" id="stack" aria-labelledby="stack-title">
+      <h2 class="section-title" id="stack-title">Tech stack</h2>
+      <div>
+        <div class="entry"><p class="meta">Languages</p><div class="main"><p>Python, Java, C++, C#, SQL, JavaScript, TypeScript, Go, R, MATLAB, VBA, Bash, HTML/CSS</p></div></div>
+        <div class="entry"><p class="meta">Data and ML</p><div class="main"><p>pandas, NumPy, scikit-learn, PyTorch, TensorFlow, DuckDB, Parquet, Streamlit, Plotly, Power BI, Tableau</p></div></div>
+        <div class="entry"><p class="meta">Agentic AI</p><div class="main"><p>RAG and vector retrieval, tool calling, MCP, ReAct loops, context engineering, guardrails, agent evals, n8n</p></div></div>
+        <div class="entry"><p class="meta">Cloud and delivery</p><div class="main"><p>Azure (Container Apps, Bicep, Azure Files), Azure DevOps, CI/CD, Docker, Git, Agile, Linux, Nginx, Cloudflare</p></div></div>
+        <div class="entry"><p class="meta">Enterprise</p><div class="main"><p>Power Apps, Power Automate, SharePoint, Excel/VBA, SAP S/4HANA, SAP Cloud ALM</p></div></div>
+        <div class="entry"><p class="meta">Web and mobile</p><div class="main"><p>React.js, Node.js, Firebase, Android SDK</p></div></div>
+        <div class="entry"><p class="meta">Spoken</p><div class="main"><p>English, Chinese, Malay (basic)</p></div></div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div>
+        <p class="contact-lede">Email is the quickest way to reach me.</p>
+        <a class="contact-email" href="mailto:tan.zhekai@gmail.com">tan.zhekai@gmail.com</a>
+        <ul class="contact-links">
+          <li><a href="https://www.linkedin.com/in/zhekai/" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/tanzhekai" rel="noopener">GitHub</a></li>
+          <li><a href="Resume_TanZheKai.pdf" download="Resume_TanZheKai.pdf">Resume (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Tan Zhe Kai, Singapore. Last updated November 2026.</div>
+  </footer>
+
+  <script>
+    (function () {
+      var header = document.querySelector('.site-header');
+      function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+</body>
+</html>
